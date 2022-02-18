@@ -1,0 +1,118 @@
+.challengeBoxContainer {
+    margin-top: 3rem;
+    height: 90%;
+
+    background-color: var(--secondary);
+    border-radius: 5px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+@media(max-width: 720px){
+    .challengeBoxContainer {
+        margin-top: 0rem;
+    }
+}
+
+.challengeBoxContainerNotActive {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.challengeBoxContainerNotActive strong {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.challengeBoxContainerNotActive p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.4;
+    max-width: 70%;
+    margin-top: 3rem;
+}
+
+.challengeBoxContainerNotActive p  img {
+    margin-bottom: 1.5rem;
+}
+
+.challengeBoxContainerActive {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.challengeBoxContainerActive header {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 0 2rem 1.5rem;
+    border-bottom: 1px solid var(--gray-line);
+}
+
+.challengeBoxContainerActive main {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.challengeBoxContainerActive main strong {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--title);
+    margin: 1.5rem 0 1rem;
+}
+
+.challengeBoxContainerActive main p {
+    line-height: 1.5;
+}
+
+.challengeBoxContainerActive footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.challengeBoxContainerActive footer button {
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+
+    border: 0;
+    border-radius: 5px;
+
+    transition: filter 0.2s;
+}
+
+
+.challengeBoxContainerActive footer button.ChallengeFailedButton {
+    background-color: var(--red);
+}
+
+.challengeBoxContainerActive footer button.ChallengeSucceededButton {
+    background-color: var(--green);
+}
+
+.challengeBoxContainerActive footer button:hover {
+    filter: brightness(0.9);
+}
