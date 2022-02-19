@@ -8,7 +8,16 @@ import { ThemeContext } from '../contexts/ThemeContext';
 
 import styles from '../styles/components/Profile.module.css';
 
-export function Profile() {
+interface IUserGithub {
+    name: string
+    avatar_url: string
+}
+
+interface IProfileData {
+    user: IUserGithub
+}
+
+export function Profile({ user }: IProfileData) {
     const { level } = useContext(ChallengesContext);
 
     const {  currentTheme, changeCurrentTheme } = useContext(ThemeContext);
@@ -16,13 +25,10 @@ export function Profile() {
     return (
         <div className={styles.profileRow}>
             <div className={styles.profileContainer}>
-                <img
-                    src="https://github.com/fernandogatto.png"
-                    alt="Fernando Gatto"
-                />
+                <img src={user.avatar_url} alt={`name: ${user.name}`}/>
 
                 <div>
-                    <strong>Fernando Gatto</strong>
+                    <strong>{user.name}</strong>
                     <p>
                         <img
                             src="icons/level.svg"

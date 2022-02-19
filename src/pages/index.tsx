@@ -1,73 +1,54 @@
-import Head from 'next/head';
-import { GetServerSideProps } from 'next';
+import { useState } from 'react';
 
-import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 
-import { ChallengeBox } from '../components/ChallengeBox';
-import { CompletedChallenges } from '../components/CompletedChallenges';
-import { Countdown } from '../components/Countdown';
-import { ExperienceBar } from '../components/ExperienceBar';
-import { Profile } from '../components/Profile';
-
-import { ChallengesProvider } from '../contexts/ChallengesContext';
-import { CountdownProvider } from '../contexts/CountdownContext';
+import { FiArrowRight } from 'react-icons/fi';
 
 import styles from '../styles/pages/Home.module.css';
 
-interface IHomeProps {
-    level: number;
-    currentExperience: number;
-    challengesCompleted: number;
-}
+function Home() {
+    const { push } = useRouter();
 
-function Home({ level, currentExperience, challengesCompleted }: IHomeProps) {
+    const [username, setUsername] = useState('');
+
+    function  handleSubmit(event) {
+        event.preventDefault();
+
+        push(`/${username}`);
+    }
+
     return (
-        <ChallengesProvider
-            level={level}
-            currentExperience={currentExperience}
-            challengesCompleted={challengesCompleted}
-        >
-            <div className={styles.container}>
-                <Head>
-                    <title>Início | move.it</title>
-                </Head>
+        <div className={styles.container}>
+            <section>
+                <div>
+                    <img src="/logo-white.svg" alt=""/>
 
-                <ExperienceBar />
+                    <h2>Bem-vindo</h2>
 
-                <CountdownProvider>
-                    <section>
-                        <div>
-                            <Profile />
+                    <div className={styles.home}>
+                        <p>Faça seu login com o GitHub para começar</p>
+                    </div>
 
-                            <CompletedChallenges />
 
-                            <Countdown />
-                        </div>
+                    <div className={styles.home}>
+                        <input
+                            type="text"
+                            placeholder='Usuário'
+                            onChange={event => setUsername(event.target.value)}
+                        />
 
-                        <div>
-                            <ChallengeBox />
-                        </div>
-                    </section>
-                </CountdownProvider>
-            </div>
-        </ChallengesProvider>
+                        <button
+                            type='button'
+                            onClick={handleSubmit}>
+                                <FiArrowRight  size={24} color='#fff'/>
+                            </button>
+                    </div>
+                </div>
+            </section>
+
+            <div className={styles.background} />
+        </div>
     );
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const {
-        level,
-        currentExperience,
-        challengesCompleted,
-    } = context.req.cookies;
-
-    return {
-        props: {
-            level: Number(level),
-            currentExperience: Number(currentExperience),
-            challengesCompleted: Number(challengesCompleted),
-        },
-    };
 }
 
 export default Home;
