@@ -4,7 +4,21 @@
     box-sizing: border-box;
 }
 
-:root {
+/* :root {
+    --white: #fff;
+    --background: #f2f3f5;
+    --gray-line: #dcdde0;
+    --text: #666666;
+    --text-highlight: #b3b9ff;
+    --title: #2e384d;
+    --red: #e83f5b;
+    --green: #4cd62b;
+    --blue: #5965e0;
+    --blue-dark: #4953b8;
+    --blue-twitter: #2aa9e0;
+} */
+
+.light {
     --white: #fff;
     --background: #f2f3f5;
     --gray-line: #dcdde0;
@@ -18,21 +32,7 @@
     --blue-twitter: #2aa9e0;
 }
 
-/* .theme-light {
-    --white: #fff;
-    --background: #f2f3f5;
-    --gray-line: #dcdde0;
-    --text: #666666;
-    --text-highlight: #b3b9ff;
-    --title: #2e384d;
-    --red: #e83f5b;
-    --green: #4cd62b;
-    --blue: #5965e0;
-    --blue-dark: #4953b8;
-    --blue-twitter: #2aa9e0;
-}
-
-.theme-dark {
+.dark {
     --white: #2E384D;
     --background: rgba(46, 56, 77, 0.9);
     --gray-line: #dcdde0;
@@ -44,7 +44,7 @@
     --blue: #fff;
     --blue-dark: #E8E8E8;
     --blue-twitter: #2aa9e0;
-} */
+}
 
 @media(max-width: 1080px) {
     html {
