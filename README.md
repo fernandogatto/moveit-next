@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/github/stars/fernandogatto/moveit-next?color=5965e0" alt="Stars">
 </p>
 
-> Pomodoro app built on NLW, organized by (Rocketseat)[].
+> Pomodoro app built on NLW, organized by [Rocketseat](https://www.rocketseat.com.br/).
 
 ## 🔗 Table of contents
 - [Technologies](#technologies)
@@ -68,6 +68,33 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 💻 Project <a name="project"/>
+
+Home:
+
+<img
+    alt="Home"
+    title="Home"
+    src=".github/home.png"
+    width="800"
+/>
+
+Dashboard light:
+
+<img
+    alt="Dashboard light"
+    title="Dashboard light"
+    src=".github/dashboard-light.png"
+    width="800"
+/>
+
+Dashboard dark:
+
+<img
+    alt="Dashboard dark"
+    title="Dashboard dark"
+    src=".github/dashboard-dark.png"
+    width="800"
+/>
 
 ## 👍 Contribute <a name="contribute"/>
 
