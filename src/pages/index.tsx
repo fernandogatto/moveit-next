@@ -14,13 +14,13 @@ import { CountdownProvider } from '../contexts/CountdownContext';
 
 import styles from '../styles/pages/Home.module.css';
 
-interface HomeProps {
+interface IHomeProps {
     level: number;
     currentExperience: number;
     challengesCompleted: number;
 }
 
-function Home({ level, currentExperience, challengesCompleted }: HomeProps) {
+function Home({ level, currentExperience, challengesCompleted }: IHomeProps) {
     return (
         <ChallengesProvider
             level={level}
